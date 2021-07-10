@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ReusableView",
+        "repositoryURL": "https://github.com/lucamegh/ReusableView",
+        "state": {
+          "branch": null,
+          "revision": "db4c0677ab89d8a41640c4563ea532627395540b",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

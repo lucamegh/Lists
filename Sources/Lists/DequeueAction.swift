@@ -5,6 +5,7 @@
  */
 
 import UIKit
+import ReusableView
 
 public class DequeueAction {
     
@@ -22,17 +23,11 @@ public class DequeueAction {
     
     private func dequeue<Cell: UICollectionViewCell>(_: Cell.Type, for indexPath: IndexPath) -> Cell {
         registerCellIfNeeded(Cell.self)
-        let identifier = reuseIdentifier(for: Cell.self)
-        return collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! Cell
+        return collectionView.dequeue(Cell.self, for: indexPath)
     }
     
     private func registerCellIfNeeded<Cell: UICollectionViewCell>(_: Cell.Type) {
-        let identifier = reuseIdentifier(for: Cell.self)
-        guard reuseIdentifiers.update(with: identifier) == nil else { return }
-        collectionView.register(Cell.self, forCellWithReuseIdentifier: identifier)
-    }
-    
-    private func reuseIdentifier<Cell: UICollectionViewCell>(for cellType: Cell.Type) -> String {
-        String(describing: Cell.self)
+        guard reuseIdentifiers.update(with: Cell.reuseIdentifier) == nil else { return }
+        collectionView.register(Cell.self)
     }
 }

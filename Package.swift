@@ -13,10 +13,15 @@ let package = Package(
             targets: ["Lists"]
         )
     ],
+    dependencies: [
+        .package(url: "https://github.com/lucamegh/ReusableView", .exact("1.0.0"))
+    ],
     targets: [
         .target(
             name: "Lists",
-            dependencies: []
+            dependencies: [
+                "ReusableView"
+            ]
         ),
         .testTarget(
             name: "ListsTests",
