@@ -1,11 +1,10 @@
-    import XCTest
-    @testable import Lists
+/**
+ * Lists
+ * Copyright (c) Luca Meghnagi 2021
+ * MIT license, see LICENSE file for details
+ */
 
-    final class ListsTests: XCTestCase {
-        func testExample() {
-            // This is an example of a functional test case.
-            // Use XCTAssert and related functions to verify your tests produce the correct
-            // results.
-            XCTAssertEqual(Lists().text, "Hello, World!")
-        }
-    }
+import XCTest
+@testable import Lists
+
+final class ListsTests: XCTestCase {}
