@@ -57,7 +57,7 @@ ListViewController(items: posts) { dequeue, indexPath, post in
 ```
 Thanks to `DequeueAction` there's no need to preregister your cells. You just have to dequeue them.
 
-You can also create list view controllers with a publisher that emits an array of values. `ListViewController` will do an animated refresh as soon as new items are emitted.
+You can also create list view controllers with a publisher that emits an array of items. `ListViewController` will do an animated refresh as soon as new items are emitted.
 
 ```swift
 let recipes = cookbook.recipes().replaceError(with: []).eraseToAnyPublisher()
