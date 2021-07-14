@@ -24,9 +24,8 @@ class ListViewControllerDataSource<Item: Hashable>: UICollectionViewDiffableData
     }
     
     func replaceItems(with items: [Item], animatingDifferences: Bool = true) {
+        let animatingDifferences = animatingDifferences && snapshot().indexOfSection(0) != nil
         let snapshot = makeSnapshot(with: items)
-        let numberOfItems = collectionView.numberOfItems(inSection: 0)
-        let animatingDifferences = animatingDifferences && numberOfItems != 0
         apply(snapshot, animatingDifferences: animatingDifferences)
     }
     

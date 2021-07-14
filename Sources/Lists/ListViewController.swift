@@ -85,6 +85,7 @@ public extension ListViewController {
     
     convenience init<Cell: UICollectionViewCell>(
         layout: UICollectionViewLayout? = nil,
+        cellType: Cell.Type,
         items: AnyPublisher<[Item], Never>,
         configureCell: @escaping (Cell, Item) -> Void
     ) {
@@ -97,11 +98,13 @@ public extension ListViewController {
     
     convenience init<Cell: UICollectionViewCell>(
         layout: UICollectionViewLayout? = nil,
+        cellType: Cell.Type,
         items: [Item],
         configureCell: @escaping (Cell, Item) -> Void
     ) {
         self.init(
             layout: layout,
+            cellType: Cell.self,
             items: Just(items).eraseToAnyPublisher(),
             configureCell: configureCell
         )
