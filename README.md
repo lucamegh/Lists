@@ -61,6 +61,7 @@ You can also create list view controllers with a publisher that emits an array o
 
 ```swift
 let recipes = cookbook.recipes().replaceError(with: []).eraseToAnyPublisher()
+
 ListViewController(cellType: RecipeCell.self, items: recipes) { cell, recipe in
     cell.configure(with: recipe)
 }
